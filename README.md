@@ -18,7 +18,8 @@ The initial configuration of general LMS preferences within your Vimeo account i
 ### SCORM Export and LMS Integration
 A Vimeo Export Service, which is a backend component, creates the SCORM ZIP file. The LMS handles the import and publishing of this package within its own system.
 
-[uml]
+<img width="1129" height="548" alt="image" src="https://github.com/user-attachments/assets/5c8686b6-6ce5-4752-bdcf-2697053500b7" />
+
 
 ### Learner Accessing Vimeo Content within the LMS
 The embedded Vimeo content is the player displayed inside the LMS, while the Vimeo Playback Service manages video streaming and logging from Vimeo's servers. Scoring is determined by your chosen methods, and the LMS controls how many times a learner can resubmit.
@@ -65,4 +66,24 @@ VimeoInterface --> VimeoInterface : Updates settings confirmation
 @enduml
 
 ---
+
+UML 2.
+@startuml
+title Integrate Videos with LMS (SCORM Export)
+
+actor "Enterprise Account Owner/Admin/Contributor" as User
+participant "Vimeo Platform" as Vimeo
+participant "Learning Management System (LMS)" as LMS
+
+User -> Vimeo : Navigates to video library & settings
+Vimeo --> User : Displays video options
+User -> Vimeo : Requests SCORM package export for a video
+Vimeo -> Vimeo : Generates SCORM package (internal process)
+Vimeo --> User : Provides SCORM ZIP file for download
+User -> LMS : Uploads SCORM ZIP file
+LMS -> LMS : Processes and imports SCORM package (internal)
+User -> LMS : Publishes course
+LMS -> LMS : Makes Vimeo content available within course
+LMS --> User : Course published; content accessible
+@enduml
 
