@@ -47,7 +47,6 @@ When you upload this ZIP file, the LMS unpacks and interprets its contents. This
 
 The LMS then creates an interface within the course module, often appearing as an embedded player or a clickable link that opens the video. This interface allows the learner to engage with the Vimeo video. Crucially, the SCORM/xAPI communication protocols built into the package enable a continuous exchange of data between the Vimeo player and the LMS. This two-way communication allows the LMS to accurately record and receive comprehensive data about the learner's viewing progress and completion status, which is then used for accurate grading and full performance tracking.
 
-<img width="1212" height="670" alt="image" src="https://github.com/user-attachments/assets/d1498102-e275-497f-8b25-2d67a145c46a" />
 
 <p align="center">
   <img width="1212" height="670" alt="image" src="https://github.com/user-attachments/assets/d1498102-e275-497f-8b25-2d67a145c46a" />
