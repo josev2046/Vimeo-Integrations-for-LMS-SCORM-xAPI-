@@ -34,7 +34,8 @@ When you upload this ZIP file, the LMS unpacks and interprets its contents. This
 
 The LMS then creates an interface within the course module, often appearing as an embedded player or a clickable link that opens the video. This interface allows the learner to engage with the Vimeo video. Crucially, the SCORM/xAPI communication protocols built into the package enable a continuous exchange of data between the Vimeo player and the LMS. This two-way communication allows the LMS to accurately record and receive comprehensive data about the learner's viewing progress and completion status, which is then used for accurate grading and full performance tracking.
 
-[uml]
+<img width="1212" height="670" alt="image" src="https://github.com/user-attachments/assets/d1498102-e275-497f-8b25-2d67a145c46a" />
+
 
 ### Further Information
 About xAPI (Placeholder for your initial article)
@@ -120,6 +121,53 @@ Learner -> LMS : Reviews score in LMS gradebook
 LMS -> LMSGradebook : Requests gradebook data
 LMSGradebook --> LMS : Provides grade information
 LMS --> Learner : Displays gradebook
+@enduml
+
+---
+
+UML 4.
+@startuml
+title SCORM/xAPI Integration Flow
+
+actor User
+actor Learner
+participant "Learning Management System (LMS)" as LMS
+
+box "Vimeo System" #LightBlue
+  participant "Vimeo Server" as Vimeo_Server
+  participant "Vimeo (SCORM/xAPI Package)" as Vimeo_Package
+  participant "Vimeo Player" as Vimeo_Player
+end box
+
+User -> Vimeo_Server: Downloads ZIP file (SCORM/xAPI Package)
+activate User
+deactivate User
+Vimeo_Server --> User: Provides Vimeo_Package (ZIP file)
+
+User -> LMS: Uploads Vimeo_Package (ZIP file)
+activate LMS
+LMS -> LMS: Unpacks and interprets contents (instructions, metadata)
+LMS -> LMS: Extracts secure link / embed code
+
+Learner -> LMS: Logs in and accesses assignment/course
+activate Learner
+LMS -> Learner: Displays interface with Vimeo Player
+deactivate LMS
+
+Vimeo_Player -> Vimeo_Server: Requests video stream via secure link / embed code
+activate Vimeo_Player
+activate Vimeo_Server
+Vimeo_Server --> Vimeo_Player: Streams video content
+deactivate Vimeo_Server
+
+Learner -> Vimeo_Player: Interacts with video (watches, pauses, etc.)
+Vimeo_Player -->> LMS: Sends viewing activity & progress data (SCORM/xAPI communication)
+activate LMS
+LMS -> LMS: Records data, calculates grade/completion status
+LMS --> Learner: Displays score in gradebook
+deactivate LMS
+deactivate Learner
+deactivate Vimeo_Player
 @enduml
 
 
