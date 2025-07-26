@@ -24,7 +24,8 @@ A Vimeo Export Service, which is a backend component, creates the SCORM ZIP file
 ### Learner Accessing Vimeo Content within the LMS
 The embedded Vimeo content is the player displayed inside the LMS, while the Vimeo Playback Service manages video streaming and logging from Vimeo's servers. Scoring is determined by your chosen methods, and the LMS controls how many times a learner can resubmit.
 
-[uml]
+<img width="1187" height="637" alt="image" src="https://github.com/user-attachments/assets/1d585ded-c354-44f6-8542-6b3578b78c94" />
+
 
 ### The SCORM/xAPI Integration Package Explained
 The downloadable ZIP file from Vimeo acts as a complete integration package, adhering to either SCORM or xAPI e-learning standards. This package is specifically designed for use by an LMS, providing it with all the necessary instructions and information for seamless integration and tracking of the associated Vimeo content.
@@ -86,4 +87,39 @@ User -> LMS : Publishes course
 LMS -> LMS : Makes Vimeo content available within course
 LMS --> User : Course published; content accessible
 @enduml
+
+---
+
+UML 3.
+@startuml
+title Learner Accessing Vimeo Content within LMS
+
+actor "Learner" as Learner
+participant "Learning Management System (LMS)" as LMS
+database "LMS Gradebook" as LMSGradebook
+
+box "Vimeo System" #LightBlue
+  participant "Embedded Vimeo Content" as VimeoContent
+  participant "Vimeo Playback Service" as VimeoPlayback
+end box
+
+Learner -> LMS : Logs in and accesses course with Vimeo video
+LMS --> Learner : Displays course content with embedded Vimeo player
+VimeoContent -> VimeoPlayback : Requests video stream and player features
+VimeoPlayback --> VimeoContent : Streams video and provides player
+Learner -> VimeoContent : Watches and interacts with video
+VimeoPlayback -> LMSGradebook : Logs viewing activity and calculates score
+Note over VimeoPlayback, LMSGradebook
+Score is calculated based on configured settings (e.g., percentage watched, pass/fail).
+Vimeo sends one score per attempt.
+The LMS manages resubmission attempts.
+End Note
+LMSGradebook --> LMS : Sends calculated grade
+LMS --> Learner : Displays completion/grade information
+Learner -> LMS : Reviews score in LMS gradebook
+LMS -> LMSGradebook : Requests gradebook data
+LMSGradebook --> LMS : Provides grade information
+LMS --> Learner : Displays gradebook
+@enduml
+
 
