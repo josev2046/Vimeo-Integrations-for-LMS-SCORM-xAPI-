@@ -12,7 +12,8 @@ Integrating Vimeo content with an LMS involves specific packaging and communicat
 
 The initial configuration of general LMS preferences within your Vimeo account includes setting up learner management, choosing technical standards (SCORM 1.2, SCORM 2004 v3, xAPI, AICC, cmi5), selecting scoring methods (percentage watched, pass/fail), and defining completion percentage thresholds. Please note that Learner IDs, sent from the LMS to Vimeo via SCORM packages, are linked to Vimeo users, especially when Single Sign-On (SSO) is in use.
 
-[uml]
+<img width="734" height="709" alt="image" src="https://github.com/user-attachments/assets/df392ad8-5699-40b2-9b7e-81f8411d0647" />
+
 
 ### SCORM Export and LMS Integration
 A Vimeo Export Service, which is a backend component, creates the SCORM ZIP file. The LMS handles the import and publishing of this package within its own system.
@@ -35,4 +36,33 @@ The LMS then creates an interface within the course module, often appearing as a
 
 ### Further Information
 About xAPI (Placeholder for your initial article)
+
+---
+
+UML 1.
+@startuml
+title Configure Default LMS Settings - Vimeo Internal Process
+box "Vimeo" #LightBlue
+  participant "Vimeo Account" as VimeoInterface
+  database "Vimeo Database" as VimeoDB
+end box
+
+VimeoInterface -> VimeoInterface : Manages navigation to Team Settings
+VimeoInterface --> VimeoInterface : Displays team settings page
+VimeoInterface -> VimeoInterface : Handles scrolling to "E-learning" section
+VimeoInterface --> VimeoInterface : Displays E-learning options
+VimeoInterface -> VimeoInterface : Processes Learner Management configuration (views Learner IDs)
+Note over VimeoInterface, VimeoDB
+Learner IDs passed from LMS to Vimeo via SCORM packages.
+If SSO is used, Vimeo associates Learner IDs with Vimeo users.
+End Note
+VimeoInterface -> VimeoInterface : Registers selection of Technical Standard (SCORM 1.2, SCORM 2004 v3, xAPI, AICC, cmi5)
+VimeoInterface -> VimeoInterface : Registers selection of Scoring Method (Percentage watched, Pass/fail)
+VimeoInterface -> VimeoInterface : Registers setting of Completion Percentage Threshold
+VimeoInterface -> VimeoDB : Submits and stores default E-learning settings
+VimeoDB --> VimeoInterface : Confirms settings saved
+VimeoInterface --> VimeoInterface : Updates settings confirmation
+@enduml
+
+---
 
