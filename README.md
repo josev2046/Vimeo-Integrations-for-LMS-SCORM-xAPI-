@@ -4,30 +4,30 @@ As means of guidance on integrating Vimeo video content with Learning Management
 
 ---
 
-## Understanding the Integration Process
+## Understanding the integration process
 
 Integrating Vimeo content with an LMS involves specific packaging and communication methods, rather than direct display. The following sections detail the core procedures and interactions.
 
-### Setting Up Default LMS Preferences
+### Setting up default LMS preferences
 
 The initial configuration of general LMS preferences within your Vimeo account includes setting up learner management, choosing technical standards (SCORM 1.2, SCORM 2004 v3, xAPI, AICC, cmi5), selecting scoring methods (percentage watched, pass/fail), and defining completion percentage thresholds. Please note that Learner IDs, sent from the LMS to Vimeo via SCORM packages, are linked to Vimeo users, especially when Single Sign-On (SSO) is in use.
 
 <img width="734" height="709" alt="image" src="https://github.com/user-attachments/assets/df392ad8-5699-40b2-9b7e-81f8411d0647" />
 
 
-### SCORM Export and LMS Integration
+### SCORM export and LMS integration
 A Vimeo Export Service, which is a backend component, creates the SCORM ZIP file. The LMS handles the import and publishing of this package within its own system.
 
 <img width="1129" height="548" alt="image" src="https://github.com/user-attachments/assets/5c8686b6-6ce5-4752-bdcf-2697053500b7" />
 
 
-### Learner Accessing Vimeo Content within the LMS
+### Learner accessing Vimeo content within the LMS
 The embedded Vimeo content is the player displayed inside the LMS, while the Vimeo Playback Service manages video streaming and logging from Vimeo's servers. Scoring is determined by your chosen methods, and the LMS controls how many times a learner can resubmit.
 
 <img width="1187" height="637" alt="image" src="https://github.com/user-attachments/assets/1d585ded-c354-44f6-8542-6b3578b78c94" />
 
 
-### The SCORM/xAPI Integration Package Explained
+### The SCORM/xAPI integration package explained
 The downloadable ZIP file from Vimeo acts as a complete integration package, adhering to either SCORM or xAPI e-learning standards. This package is specifically designed for use by an LMS, providing it with all the necessary instructions and information for seamless integration and tracking of the associated Vimeo content.
 
 When you upload this ZIP file, the LMS unpacks and interprets its contents. This package gives the LMS the exact details and commands needed to correctly start and show the Vimeo video player within its own system. It is important to remember that the actual video content remains on Vimeo's dedicated servers. The SCORM/xAPI package within the ZIP file typically contains a secure link or embed code. When the LMS processes this, it instructs the system to display the Vimeo video player, which then streams the video directly from Vimeo.
@@ -37,7 +37,7 @@ The LMS then creates an interface within the course module, often appearing as a
 <img width="1212" height="670" alt="image" src="https://github.com/user-attachments/assets/d1498102-e275-497f-8b25-2d67a145c46a" />
 
 
-### Further Information
+### Further information
 About xAPI (Placeholder for your initial article)
 
 ---
