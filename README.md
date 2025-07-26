@@ -39,7 +39,8 @@ The LMS then creates an interface within the course module, often appearing as a
 
 
 ### Further information
-About xAPI (Placeholder for your initial article)
+Vimeo integration with LMS (SCORM and xAPI)
+https://help.vimeo.com/hc/en-us/articles/34850919923089-Vimeo-integration-with-LMS-SCORM-and-xAPI
 
 ---
 
