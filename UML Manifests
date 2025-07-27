@@ -1,4 +1,4 @@
-UML 1: Configure Default LMS Settings - Vimeo Internal Process
+Configure Default LMS Settings - Vimeo Internal Process
 
 @startuml
 title Configure Default LMS Settings - Vimeo Internal Process
@@ -26,7 +26,7 @@ VimeoInterface --> VimeoInterface : Updates settings confirmation
 
 ---
 
-UML 2: Integrate Videos with LMS (SCORM Export)
+Integrate Videos with LMS (SCORM Export)
 
 @startuml
 title Integrate Videos with LMS (SCORM Export)
@@ -55,7 +55,7 @@ LMS --> User : Course published; content accessible
 
 ---
 
-UML 3: Learner Accessing Vimeo Content within LMS
+Learner Accessing Vimeo Content within LMS
 
 @startuml
 title Learner Accessing Vimeo Content within LMS
@@ -93,7 +93,7 @@ LMS --> Learner : Displays gradebook
 
 ---
 
-UML 4: SCORM/xAPI Integration Flow
+SCORM/xAPI Integration Flow
 
 @startuml
 title SCORM/xAPI Integration Flow
