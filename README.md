@@ -22,7 +22,7 @@ The LMS then creates an interface within the course module, often appearing as a
   Figure 4: The SCORM/xAPI integration flow (UML)
 </p>
 
-Let's see how.
+Let's look into the details.
 
 ### Setting up default LMS preferences
 
@@ -53,21 +53,6 @@ The embedded Vimeo content is the player displayed inside the LMS, while the Vim
   <img width="1187" height="637" alt="image" src="https://github.com/user-attachments/assets/1d585ded-c354-44f6-8542-6b3578b78c94" />
   <br>
   Figure 3: Learner accessing Vimeo content within the LMS (UML)
-</p>
-
-
-### The SCORM/xAPI integration package explained
-The downloadable ZIP file from Vimeo acts as a complete integration package, adhering to either SCORM or xAPI e-learning standards. This package is specifically designed for use by an LMS, providing it with all the necessary instructions and information for seamless integration and tracking of the associated Vimeo content.
-
-When you upload this ZIP file, the LMS unpacks and interprets its contents. This package gives the LMS the exact details and commands needed to correctly start and show the Vimeo video player within its own system. It is important to remember that the actual video content remains on Vimeo's dedicated servers. The SCORM/xAPI package within the ZIP file typically contains a secure link or embed code. When the LMS processes this, it instructs the system to display the Vimeo video player, which then streams the video directly from Vimeo.(Figure 4)
-
-The LMS then creates an interface within the course module, often appearing as an embedded player or a clickable link that opens the video. This interface allows the learner to engage with the Vimeo video. Crucially, the SCORM/xAPI communication protocols built into the package enable a continuous exchange of data between the Vimeo player and the LMS. This two-way communication allows the LMS to accurately record and receive comprehensive data about the learner's viewing progress and completion status, which is then used for accurate grading and full performance tracking.
-
-
-<p align="center">
-  <img width="1212" height="670" alt="image" src="https://github.com/user-attachments/assets/d1498102-e275-497f-8b25-2d67a145c46a" />
-  <br>
-  Figure 4: The SCORM/xAPI integration flow (UML)
 </p>
 
 
