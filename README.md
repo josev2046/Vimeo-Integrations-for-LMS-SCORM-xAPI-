@@ -1,5 +1,7 @@
 # Vimeo LMS Integration: SCORM & xAPI Guidance
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16480418.svg)](https://doi.org/10.5281/zenodo.16480418)
+
 As means of guidance for fellow Learning Technologists on integrating Vimeo video content with Learning Management Systems (LMS) through SCORM and xAPI standards, this repository explains the practical steps for enterprise account holders to set up e-learning preferences, export SCORM packages, and enable learners to engage with Vimeo content within an LMS.
 
 ---
