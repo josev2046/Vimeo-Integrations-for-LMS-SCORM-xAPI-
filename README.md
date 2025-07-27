@@ -6,7 +6,7 @@ As means of guidance on integrating Vimeo video content with Learning Management
 
 ## Understanding the integration process
 
-Integrating Vimeo content with an LMS involves specific packaging and communication methods, rather than direct display. The following sections detail the core procedures and interactions.
+Integrating Vimeo content with an LMS via SCORM or xAPI involves specific packaging and communication methods, rather than direct display. The following sections detail the core procedures and interactions.
 
 ### Setting up default LMS preferences
 
